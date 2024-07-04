@@ -6,6 +6,11 @@
     }],
     "routes": [
         {
+            "src": "/static/(.*)",
+            "headers": { "Cache-Control": "max-age=31536000, immutable" },
+            "dest": "/static/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "djangoProject/wsgi.py"
         }
